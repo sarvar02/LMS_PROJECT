@@ -1,6 +1,5 @@
 package com.example.lms_project.course;
 
-import javax.persistence.Column;
 import javax.validation.constraints.NotBlank;
 
 public class CourseDto {

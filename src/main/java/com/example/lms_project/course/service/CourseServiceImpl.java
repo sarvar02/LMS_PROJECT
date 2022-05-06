@@ -9,7 +9,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CourseServiceImpl implements CourseService {
@@ -52,12 +54,21 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public void deleteCourse(Integer id) {
-
+        Course course = getEntity(id);
+        course.setDeletedAt(LocalDateTime.now());
+        saveToDatabase(course);
     }
 
     @Override
     public List<CourseDto> getAllCourses() {
-        return null;
+        List<Course> courseList = new LinkedList<>();
+        if(courseList.isEmpty())
+            throw new ServerBadRequestException("Course not found !");
+
+        return courseList
+                .stream()
+                .map(courseMapper::modelToDto)
+                .collect(Collectors.toList());
     }
 
 

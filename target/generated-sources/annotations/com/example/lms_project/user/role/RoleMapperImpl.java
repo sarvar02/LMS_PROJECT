@@ -1,6 +1,10 @@
 package com.example.lms_project.user.role;
 
 import javax.annotation.processing.Generated;
+
+import com.example.lms_project.role.Role;
+import com.example.lms_project.role.RoleDto;
+import com.example.lms_project.role.RoleMapper;
 import org.springframework.stereotype.Component;
 
 @Generated(

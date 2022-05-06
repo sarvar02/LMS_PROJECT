@@ -1,4 +1,4 @@
-package com.example.lms_project.user.role;
+package com.example.lms_project.role;
 import java.util.List;
 
 public interface RoleService {

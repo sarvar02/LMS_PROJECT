@@ -1,4 +1,4 @@
-package com.example.lms_project.user.role;
+package com.example.lms_project.role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

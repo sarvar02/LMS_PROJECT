@@ -1,5 +1,5 @@
 package com.example.lms_project.user;
-import com.example.lms_project.user.role.Role;
+import com.example.lms_project.role.Role;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

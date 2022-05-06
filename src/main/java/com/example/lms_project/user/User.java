@@ -1,6 +1,6 @@
 package com.example.lms_project.user;
 
-import com.example.lms_project.user.role.Role;
+import com.example.lms_project.role.Role;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

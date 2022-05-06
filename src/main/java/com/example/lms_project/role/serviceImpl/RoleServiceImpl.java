@@ -1,6 +1,6 @@
-package com.example.lms_project.user.role.serviceImpl;
-import com.example.lms_project.exception.ServerBadRequestException;
-import com.example.lms_project.user.role.*;
+package com.example.lms_project.role.serviceImpl;
+import com.example.lms_project.www.exception.ServerBadRequestException;
+import com.example.lms_project.role.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;

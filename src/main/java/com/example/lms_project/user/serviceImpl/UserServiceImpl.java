@@ -1,6 +1,6 @@
 package com.example.lms_project.user.serviceImpl;
 import com.example.lms_project.user.*;
-import com.example.lms_project.www.exception.ServerBadRequestException;
+import com.example.lms_project.exception.ServerBadRequestException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;

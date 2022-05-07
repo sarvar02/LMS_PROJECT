@@ -1,4 +1,4 @@
-package com.example.lms_project.www.exception;
+package com.example.lms_project.exception;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

@@ -1,11 +1,10 @@
 package com.example.lms_project.user;
-import com.example.lms_project.user.role.Role;
+import com.example.lms_project.role.Role;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 

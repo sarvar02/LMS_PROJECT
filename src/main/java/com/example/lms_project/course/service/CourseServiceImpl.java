@@ -4,7 +4,7 @@ import com.example.lms_project.course.Course;
 import com.example.lms_project.course.CourseDto;
 import com.example.lms_project.course.CourseMapper;
 import com.example.lms_project.course.CourseRepository;
-import com.example.lms_project.exception.ServerBadRequestException;
+import com.example.lms_project.www.exception.ServerBadRequestException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

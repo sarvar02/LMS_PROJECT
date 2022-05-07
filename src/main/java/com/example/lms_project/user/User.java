@@ -1,11 +1,9 @@
 package com.example.lms_project.user;
-
 import com.example.lms_project.role.Role;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -30,13 +28,13 @@ public class User {
 //    @JoinColumn(name = ("certificate_id"), referencedColumnName = ("id"))
 //    private Certificate certificate;
 
-    @Column(name = ("certificate_id"))
-    private Integer certificateId;
+//    @Column(name = ("certificate_id"))
+//    private Integer certificateId;
 
-    @Column(name = ("username"))
+    @Column(name = ("firstname"))
     private String firstname;
 
-    @Column(name = ("username"))
+    @Column(name = ("lastname"))
     private String lastname;
 
     @Column(name = ("username"))

@@ -42,9 +42,9 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public void updateCourse(Integer id, CourseDto courseDto) {
         Course course = getEntity(id);
-        Course newCourse;
+        Course newCourse = courseMapper.dtoToModel(courseDto);
 
-        newCourse = courseMapper.dtoToModel(courseDto);
+        newCourse.setId(id);
         newCourse.setStatus(course.getStatus());
         newCourse.setCreatedAt(course.getCreatedAt());
         newCourse.setUpdatedAt(LocalDateTime.now());
@@ -61,7 +61,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public List<CourseDto> getAllCourses() {
-        List<Course> courseList = new LinkedList<>();
+        List<Course> courseList = courseRepository.findAllByDeletedAtIsNull();
         if(courseList.isEmpty())
             throw new ServerBadRequestException("Course not found !");
 
@@ -75,7 +75,7 @@ public class CourseServiceImpl implements CourseService {
     // Secondary functions
 
     public Course getEntity(Integer id){
-        return courseRepository.findById(id)
+        return courseRepository.findByIdAndDeletedAtIsNull(id)
                 .orElseThrow(() -> new ServerBadRequestException("Course not found !"));
     }
 

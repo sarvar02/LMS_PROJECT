@@ -30,7 +30,7 @@ public class Group {
     private Integer courseId;
 
     @ManyToOne
-    @JoinColumn(name = ("group_type_id"), insertable = true, updatable = true)
+    @JoinColumn(name = ("group_type_id"), insertable = false, updatable = false)
     private GroupType groupType;
 
     @Column(name = ("group_type_id"))

@@ -8,6 +8,7 @@ import com.example.lms_project.group.GroupMapper;
 import com.example.lms_project.group.GroupRepository;
 import com.example.lms_project.groupType.GroupTypeRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -43,7 +44,7 @@ public class GroupServiceImpl implements GroupService{
         Group group = groupMapper.dtoToModel(groupDto);
         group.setCreatedAt(LocalDateTime.now());
         group.setStatus(true);
-        groupRepository.save(group);
+        saveToDatabase(group);
     }
 
     @Override
@@ -60,14 +61,14 @@ public class GroupServiceImpl implements GroupService{
         newGroup.setStatus(group.getStatus());
         newGroup.setUpdatedAt(LocalDateTime.now());
 
-        groupRepository.save(newGroup);
+       saveToDatabase(newGroup);
     }
 
     @Override
     public void deleteGroup(Integer id) {
         Group group = getEntity(id);
         group.setDeletedAt(LocalDateTime.now());
-        groupRepository.save(group);
+        saveToDatabase(group);
     }
 
     @Override
@@ -87,6 +88,11 @@ public class GroupServiceImpl implements GroupService{
     public Group getEntity(Integer id){
         return groupRepository.findByIdAndDeletedAtIsNull(id)
                 .orElseThrow(() -> new ServerBadRequestException("Group not found !"));
+    }
+
+    @Transactional
+    public void saveToDatabase(Group group){
+        groupRepository.save(group);
     }
 
     public void checkForUnique(GroupDto groupDto){

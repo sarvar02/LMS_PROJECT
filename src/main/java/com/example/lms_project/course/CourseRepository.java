@@ -14,4 +14,5 @@ public interface CourseRepository extends JpaRepository<Course, Integer> {
 
     List<Course> findAllByDeletedAtIsNull();
 
+    boolean existsById(Integer id);
 }

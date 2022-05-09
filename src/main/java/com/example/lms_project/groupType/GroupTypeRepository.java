@@ -13,4 +13,5 @@ public interface GroupTypeRepository extends JpaRepository<GroupType, Integer> {
 
     List<GroupType> findAllByDeletedAtIsNull();
 
+    boolean existsById(Integer id);
 }

@@ -5,8 +5,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-05-09T09:23:35+0500",
-    comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.15 (Private Build)"
+    date = "2022-05-09T11:05:35+0500",
+    comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.14.1 (Ubuntu)"
 )
 @Component
 public class GroupTypeMapperImpl implements GroupTypeMapper {

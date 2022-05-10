@@ -1,6 +1,10 @@
 package com.example.lms_project.enums;
 
 public enum AttandenceType {
-    ATTANDED,
-    NOT_ATTANDED
+    ATTANDED("attanded"),
+    NOT_ATTANDED("not_attanded");
+
+    AttandenceType(String name) {
+    }
+
 }

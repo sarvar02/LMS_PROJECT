@@ -13,4 +13,6 @@ public interface RoomRepository extends JpaRepository<Room, Integer> {
 
     List<Room> findAllByDeletedAtIsNull();
 
+    boolean existsById(Integer id);
+
 }

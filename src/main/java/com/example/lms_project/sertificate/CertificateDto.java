@@ -14,10 +14,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CertificateDto {
+public class CertificateDto extends Filter{
 
     private Long id;
-    private CourseDto course;
+    private CourseDto courseDto;
     private Long courseId;
     private String token;
     private String name;

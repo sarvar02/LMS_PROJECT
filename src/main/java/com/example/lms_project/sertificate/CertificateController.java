@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping("/api/certificate")
 public class CertificateController {
 
-    private CertificateService certificateService;
+    private final CertificateService certificateService;
 
     @PostMapping("/create")
     public ResponseEntity<?> createCertificate(@Valid @RequestBody CertificateDto certificateDto){

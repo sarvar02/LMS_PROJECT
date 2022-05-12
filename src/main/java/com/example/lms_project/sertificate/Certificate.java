@@ -24,7 +24,7 @@ public class Certificate {
     private Course course;
 
     @Column(name = ("subject_id"))
-    private Long courseId;
+    private Integer courseId;
 
     @Column(name = ("token"))
     private String token;

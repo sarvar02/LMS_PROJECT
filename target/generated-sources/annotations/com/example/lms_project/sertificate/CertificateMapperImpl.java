@@ -5,8 +5,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-05-09T15:34:04+0500",
-    comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.14.1 (Ubuntu)"
+    date = "2022-05-12T14:55:15+0500",
+    comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.15 (Private Build)"
 )
 @Component
 public class CertificateMapperImpl implements CertificateMapper {
@@ -20,7 +20,9 @@ public class CertificateMapperImpl implements CertificateMapper {
         Certificate certificate = new Certificate();
 
         certificate.setId( dto.getId() );
-        certificate.setCourseId( dto.getCourseId() );
+        if ( dto.getCourseId() != null ) {
+            certificate.setCourseId( dto.getCourseId().intValue() );
+        }
         certificate.setToken( dto.getToken() );
         certificate.setName( dto.getName() );
         certificate.setSurname( dto.getSurname() );
@@ -42,7 +44,9 @@ public class CertificateMapperImpl implements CertificateMapper {
         CertificateDto certificateDto = new CertificateDto();
 
         certificateDto.setId( certificate.getId() );
-        certificateDto.setCourseId( certificate.getCourseId() );
+        if ( certificate.getCourseId() != null ) {
+            certificateDto.setCourseId( certificate.getCourseId().longValue() );
+        }
         certificateDto.setToken( certificate.getToken() );
         certificateDto.setName( certificate.getName() );
         certificateDto.setSurname( certificate.getSurname() );

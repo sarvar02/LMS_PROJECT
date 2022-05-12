@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Entity(name = ("users"))
 public class User {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @ManyToOne
@@ -26,7 +26,7 @@ public class User {
     private Integer roleId;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = ("certificate_id"), referencedColumnName = ("id"))
+    @JoinColumn(name = ("certificate_id"), referencedColumnName = ("id"), insertable = false, updatable = false)
     private Certificate certificate;
 
     @Column(name = ("certificate_id"))

@@ -61,7 +61,7 @@ public class UserGroupServiceImpl implements UserGroupService{
 
     @Override
     public List<UserGroupDto> getAllUserGroups() {
-        List<UserGroup> userGroupList = userGroupRepository.findAllByIdAndDeletedAtIsNull();
+        List<UserGroup> userGroupList = userGroupRepository.findAllAndDeletedAtIsNull();
         if(userGroupList.isEmpty())
             throw new ServerBadRequestException("User group not found !");
 

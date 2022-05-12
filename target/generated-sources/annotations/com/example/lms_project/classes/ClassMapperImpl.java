@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-05-12T14:55:15+0500",
+    date = "2022-05-12T15:05:25+0500",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.15 (Private Build)"
 )
 @Component
@@ -23,6 +23,7 @@ public class ClassMapperImpl implements ClassMapper {
         class1.setName( classDto.getName() );
         class1.setRoom( classDto.getRoom() );
         class1.setRoomId( classDto.getRoomId() );
+        class1.setUserGroupId( classDto.getUserGroupId() );
 
         return class1;
     }
@@ -39,6 +40,7 @@ public class ClassMapperImpl implements ClassMapper {
         classDto.setName( clas.getName() );
         classDto.setRoom( clas.getRoom() );
         classDto.setRoomId( clas.getRoomId() );
+        classDto.setUserGroupId( clas.getUserGroupId() );
 
         return classDto;
     }

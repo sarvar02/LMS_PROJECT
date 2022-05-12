@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = ("user-groups"))
+@Table(name = ("user_groups"))
 public class UserGroup {
 
     @Id

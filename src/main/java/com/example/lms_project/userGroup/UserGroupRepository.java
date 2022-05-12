@@ -13,5 +13,5 @@ public interface UserGroupRepository extends JpaRepository<UserGroup, Integer> {
 
     List<UserGroup> findAllAndDeletedAtIsNull();
 
-    List<UserGroup> findAllByUserIdAAndDeletedAtIsNull(Integer userId);
+    List<UserGroup> findAllByUserIdAndDeletedAtIsNull(Integer userId);
 }

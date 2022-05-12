@@ -25,12 +25,12 @@ public class User {
     @Column(name = ("role_id"))
     private Integer roleId;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = ("certificate_id"), referencedColumnName = ("id"), insertable = false, updatable = false)
-    private Certificate certificate;
-
-    @Column(name = ("certificate_id"))
-    private Integer certificateId;
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = ("certificate_id"), referencedColumnName = ("id"), insertable = false, updatable = false)
+//    private Certificate certificate;
+//
+//    @Column(name = ("certificate_id"))
+//    private Integer certificateId;
 
     @Column(name = ("firstname"))
     private String firstname;

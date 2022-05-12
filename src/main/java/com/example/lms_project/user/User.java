@@ -1,5 +1,6 @@
 package com.example.lms_project.user;
 import com.example.lms_project.role.Role;
+import com.example.lms_project.sertificate.Certificate;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,12 +25,12 @@ public class User {
     @Column(name = ("role_id"))
     private Integer roleId;
 
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = ("certificate_id"), referencedColumnName = ("id"))
-//    private Certificate certificate;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = ("certificate_id"), referencedColumnName = ("id"))
+    private Certificate certificate;
 
-//    @Column(name = ("certificate_id"))
-//    private Integer certificateId;
+    @Column(name = ("certificate_id"))
+    private Integer certificateId;
 
     @Column(name = ("firstname"))
     private String firstname;

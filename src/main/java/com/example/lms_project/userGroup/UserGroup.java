@@ -23,14 +23,14 @@ public class UserGroup {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "group_id", insertable = false, updatable = false)
+    @JoinColumn(name = ("group_id"), insertable = false, updatable = false)
     private Group group;
 
     @Column(name = ("group_id"))
     private Integer groupId;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", insertable = false, updatable = false)
+    @JoinColumn(name = ("user_id"), insertable = false, updatable = false)
     private User user;
 
     @Column(name = ("user_id"))

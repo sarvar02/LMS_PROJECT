@@ -1,6 +1,7 @@
 package com.example.lms_project.classes;
 
 import com.example.lms_project.room.Room;
+import com.example.lms_project.userGroup.UserGroup;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,14 +26,20 @@ public class Class {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = ("room_id"))
+    @JoinColumn(name = ("room_id"), insertable = false, updatable = false)
     private Room room;
 
     @Column(name = ("room_id"))
     private Integer roomId;
 
 //     Todo Attandence type
-//     Todo User group
+
+    @ManyToOne
+    @JoinColumn(name = ("user_group_id"), insertable = false, updatable = false)
+    private UserGroup userGroup;
+
+    @Column(name = ("user_group_id"))
+    private Integer userGroupId;
 
     @Column(name = ("status"))
     private Boolean status;

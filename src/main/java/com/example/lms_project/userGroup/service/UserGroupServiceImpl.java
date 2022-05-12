@@ -80,4 +80,18 @@ public class UserGroupServiceImpl implements UserGroupService{
     public void saveToDatabase(UserGroup userGroup){
         userGroupRepository.save(userGroup);
     }
+
+
+
+
+//    public List<UserGroupDto> getAllUsersById(Integer userId){
+//        List<UserGroup> userGroupList = userGroupRepository.findAllByUserIdAAndDeletedAtIsNull(userId);
+//        if(userGroupList.isEmpty())
+//            throw new ServerBadRequestException("User not found !");
+//        return userGroupList.stream()
+//                .map(userGroupMapper::modelToDto)
+//                .collect(Collectors.toList());
+//    }
+
+
 }

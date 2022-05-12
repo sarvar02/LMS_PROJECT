@@ -1,6 +1,7 @@
 package com.example.lms_project.classes;
 
 import com.example.lms_project.room.Room;
+import com.example.lms_project.userGroup.UserGroupDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ public class ClassDto {
     private String name;
     private Room room;
     private Integer roomId;
-
+    private UserGroupDto userGroupDto;
+    private Integer userGroupId;
 //     Todo Attandence type
-//     Todo User group
 }

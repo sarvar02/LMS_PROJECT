@@ -1,12 +1,14 @@
 package com.example.lms_project.group.service;
 
 import com.example.lms_project.course.CourseRepository;
+import com.example.lms_project.course.service.CourseService;
 import com.example.lms_project.exception.ServerBadRequestException;
 import com.example.lms_project.group.Group;
 import com.example.lms_project.group.GroupDto;
 import com.example.lms_project.group.GroupMapper;
 import com.example.lms_project.group.GroupRepository;
 import com.example.lms_project.groupType.GroupTypeRepository;
+import com.example.lms_project.groupType.service.GroupTypeService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,12 +23,21 @@ public class GroupServiceImpl implements GroupService{
     private final GroupMapper groupMapper;
     private final GroupTypeRepository groupTypeRepository;
     private final CourseRepository courseRepository;
+    private final CourseService courseService;
+    private final GroupTypeService groupTypeService;
 
-    public GroupServiceImpl(GroupRepository groupRepository, GroupMapper groupMapper, GroupTypeRepository groupTypeRepository, CourseRepository courseRepository) {
+    public GroupServiceImpl(GroupRepository groupRepository,
+                            GroupMapper groupMapper,
+                            GroupTypeRepository groupTypeRepository,
+                            CourseRepository courseRepository,
+                            CourseService courseService,
+                            GroupTypeService groupTypeService) {
         this.groupRepository = groupRepository;
         this.groupMapper = groupMapper;
         this.groupTypeRepository = groupTypeRepository;
         this.courseRepository = courseRepository;
+        this.courseService = courseService;
+        this.groupTypeService = groupTypeService;
     }
 
     @Override

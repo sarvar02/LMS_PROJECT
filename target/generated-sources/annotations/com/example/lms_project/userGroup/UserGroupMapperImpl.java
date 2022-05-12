@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-05-12T15:05:25+0500",
+    date = "2022-05-12T17:21:36+0500",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.15 (Private Build)"
 )
 @Component
@@ -20,7 +20,6 @@ public class UserGroupMapperImpl implements UserGroupMapper {
         UserGroup userGroup = new UserGroup();
 
         userGroup.setId( userGroupDto.getId() );
-        userGroup.setGroup( userGroupDto.getGroup() );
         userGroup.setGroupId( userGroupDto.getGroupId() );
         userGroup.setUser( userGroupDto.getUser() );
         userGroup.setUserId( userGroupDto.getUserId() );
@@ -37,7 +36,6 @@ public class UserGroupMapperImpl implements UserGroupMapper {
         UserGroupDto userGroupDto = new UserGroupDto();
 
         userGroupDto.setId( userGroup.getId() );
-        userGroupDto.setGroup( userGroup.getGroup() );
         userGroupDto.setGroupId( userGroup.getGroupId() );
         userGroupDto.setUser( userGroup.getUser() );
         userGroupDto.setUserId( userGroup.getUserId() );

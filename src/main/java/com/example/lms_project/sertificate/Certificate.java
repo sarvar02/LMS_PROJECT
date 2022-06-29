@@ -1,5 +1,6 @@
 package com.example.lms_project.sertificate;
 import com.example.lms_project.course.Course;
+import com.example.lms_project.user.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,8 +24,11 @@ public class Certificate {
     @JoinColumn(name = ("course_id"), insertable = false, updatable = false)
     private Course course;
 
-    @Column(name = ("subject_id"))
+    @Column(name = ("course_id"))
     private Integer courseId;
+
+    @OneToOne(mappedBy = ("certificate"))
+    private User user;
 
     @Column(name = ("token"))
     private String token;

@@ -14,6 +14,9 @@ public class UserServiceImpl implements UserService {
     private final UserMapper mapper;
     @Override
     public void create(UserDto dto) {
+        userRepository.findByPhoneAndDeletedAtIsNull(dto.getPhone())
+                .orElseThrow(()-> new ServerBadRequestException("User with this phone is already registered!"));
+
         User user = mapper.dtoToModel(dto);
         user.setCreatedAt(LocalDateTime.now());
         user.setStatus(true);
@@ -37,6 +40,7 @@ public class UserServiceImpl implements UserService {
     public void update(Integer id, UserDto dto) {
         User old = getEntity(id);
         User user = mapper.dtoToModel(dto);
+        user.setId(old.getId());
         user.setCreatedAt(old.getCreatedAt());
         user.setStatus(old.getStatus());
         user.setUpdatedAt(LocalDateTime.now());

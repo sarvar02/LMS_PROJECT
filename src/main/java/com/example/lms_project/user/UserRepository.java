@@ -13,4 +13,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     @Query("select u from users u where u.deletedAt is null")
     List<User> findAllByDeletedAtIsNull();
+
+    @Query("select u from users u where u.phone = ?1 and u.deletedAt is null")
+    Optional<User> findByPhoneAndDeletedAtIsNull(String phone);
 }

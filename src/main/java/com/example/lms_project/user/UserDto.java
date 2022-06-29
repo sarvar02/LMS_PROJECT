@@ -1,6 +1,8 @@
 package com.example.lms_project.user;
 import com.example.lms_project.role.Role;
+import com.example.lms_project.role.RoleDto;
 import com.example.lms_project.sertificate.Certificate;
+import com.example.lms_project.sertificate.CertificateDto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,11 +19,11 @@ import javax.validation.constraints.NotNull;
 public class UserDto {
 
     private Integer id;
-    private Role role;
+    private RoleDto role;
     @NotNull(message = ("User Role id is mandatory!"))
     private Integer roleId;
-    private Certificate certificate;
-    @NotNull(message = ("Certificate id is mandatory!"))
+    private CertificateDto certificate;
+//    @NotNull(message = ("Certificate id is mandatory!"))
     private Integer certificateId;
     @NotBlank(message = ("User firstname is mandatory!"))
     private String firstname;
